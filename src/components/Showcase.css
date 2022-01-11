@@ -1,0 +1,80 @@
+video {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+.showcase {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+	object-fit: contain;
+}
+
+.overlay {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 650px;
+	text-align: center;
+}
+
+.overlay > h1 {
+	font-size: 100px;
+	font-family: "Permanent Marker", cursive;
+	/* margin-top: -30%; */
+	padding-bottom: 40px;
+	animation: flicker 1.5s infinite alternate;
+	color: #fff;
+}
+
+@keyframes flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+			0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+	}
+	20%,
+	24%,
+	55% {
+		text-shadow: none;
+	}
+}
+
+.overlay > p {
+	margin-top: 8px;
+	color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6,
+		0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+	font-size: 32px;
+	text-align: center;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+	 .showcase {
+    background-position: top;
+  }
+
+	.showcase .overlay h1 {
+		font-size: 64px;
+	}
+
+	.showcase .overlay p {
+		font-size: 22px;
+	}
+}
